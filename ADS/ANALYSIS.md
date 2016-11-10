@@ -9,9 +9,22 @@ It includes native support for modern operating systems (Windows 10, macOS, and 
 ##Technology
 ###.Net
 OpenRA's engine and mods were developed in C# making use of Microsoft's .Net Framework. In order to make it cross-platform, OpenRa uses the Mono framework to extend the Microsoft based development to other platforms.
-
 ###Lua API
 OpenRA allows custom maps and missions to be scripted using Lua 5.1. These scripts run in a sandbox that prevents access to unsafe functions (e.g. OS or file access), and limits the memory and CPU usage of the scripts.
+
+
+
+##OpenRA Engine
+###Features
+####Mapping
+####Audio
+####Palette
+####Online
+
+##OpenRA Mods
+
+
+##Branching Structure
 
 ##Repository Structure
 
