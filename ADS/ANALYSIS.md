@@ -4,7 +4,7 @@
 
 OpenRA is a project meant to recreate and modernize the classic Command & Conquer real time strategy (RTS) games. It is made of two major elements: the OpenRA engine, a cross-platform open source game engine that provides a common platform for building RTS games; and OpenRA mods, the tweaks and changes that can be made to the common RTS platform provided by the OpenRA engine.
 
-It includes native support for modern operating systems (Windows 10, macOS, and most Linux distros) without relying on emulation or binary hacks.
+The OpenRA engine is free comes with three distinct mods: Red Alert, Tiberian Dawn and Dune 2000. It includes native support for modern operating systems (Windows 10, macOS, and most Linux distros) without relying on emulation or binary hacks.
 
 ##Technology
 ###.Net
@@ -16,17 +16,21 @@ OpenRA allows custom maps and missions to be scripted using Lua 5.1. These scrip
 
 ##OpenRA Engine
 ###Features
-####Mapping
-####Audio
-####Palette
 ####Online
+OpenRA also supports online multiplayer where players can play against each other in a battle for full battleground control.
+Despite being out of the scope of this project, the game engine interacts with the OpenRA Master Server that handles all requests regarding online multiplayer battles.
 
 ##OpenRA Mods
-
+####Mapping
+OpenRA comes with an in-game map editor. It allows users to create, edit and delete maps.
+One can also import maps from the original Command & Conquer games into the OpenRA engine. This can be done by running the `OpenRA.Utility.exe` command
+####Audio
+WAV and AUD file formats are the only ones accepted by the OpenRA engine. These files must be in a 16-bit 22050 Hz format.
 
 ##Branching Structure
 
 ##Repository Structure
 
+YAML files
 
 ##Artificial Intelligence
