@@ -1,6 +1,29 @@
 Style
 =====
 
+##Call and Return
+###Main Program and Subroutines
+###Object-Oriented
+###Layered
+
+##Data Flow
+###Batch Sequential
+###Pipes and Filters
+
+##Data-Centered
+###Repository
+###Blackboard
+
+##Virtual Machine
+###Interpreter
+###Rule-based System
+
+##Communication Processes
+
+##Event Systems
+###Implicit Invocation
+###Explicit Invocation
+
 ###Call and Return
 
 ####Main Program/Subroutines
