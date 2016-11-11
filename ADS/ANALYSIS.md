@@ -15,10 +15,15 @@ OpenRA allows custom maps and missions to be scripted using Lua 5.1. These scrip
 
 
 ##OpenRA Engine
-###Features
+###Game
+All units/structures/most things in the map are Actors. Actors contain a collection of traits. Traits consist of an info class and a class that does stuff. There is one instance of the infoclass shared across all actors of the same type. Each actor gets its own instance of the trait class itself. Infoclasses are responsible for instantiating their corresponding trait class -- see ITraitInfo, and TraitInfo for the trivial implementation of this. In some cases the trait class's constructor needs some args, in which case TraitInfo can't be used. This is a limitation of C# generics.
+
 ####Online
 OpenRA also supports online multiplayer where players can play against each other in a battle for full battleground control.
 Despite being out of the scope of this project, the game engine interacts with the OpenRA Master Server that handles all requests regarding online multiplayer battles.
+
+##Artificial Intelligence
+Given that it is a game, many of the units
 
 ##OpenRA Mods
 ####Mapping
@@ -32,5 +37,3 @@ WAV and AUD file formats are the only ones accepted by the OpenRA engine. These 
 ##Repository Structure
 
 YAML files
-
-##Artificial Intelligence
