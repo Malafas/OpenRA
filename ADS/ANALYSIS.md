@@ -37,3 +37,5 @@ WAV and AUD file formats are the only ones accepted by the OpenRA engine. These 
 ##Repository Structure
 
 YAML files
+
+Use Cases 
