@@ -36,10 +36,12 @@ Also in this line of styling, actors start simpler, and as a user get to unblock
 
 The basic in-game mechanics are founded in:
 
+####Implicit
+
+The main activity in which the user will spend time is on micro-managing the system's actors.
+Each actor has a set of abilities and features which delimits the spectrum of his usage, consequently imposing managing strategies to the user's orders.
+
 ####Explicit
 
-The main activity the user will spend time is on micro-managing the system's actors.
-Each actor has a set of abilities and features which delimits the spectrum of his usage, and  
-
-
-####Implicit
+Once embedded into the active system, the actor will have pre-setted reactions to their environment.
+This set of conditions is mutable because some of them are configurable by the user, but the actor will always be standing by to the environment interaction.
