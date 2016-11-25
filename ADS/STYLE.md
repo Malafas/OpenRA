@@ -1,47 +1,17 @@
 Style
 =====
 
-##Call and Return
-###Main Program and Subroutines
-###Object-Oriented
-###Layered
+##Call and Return & Event-based
 
-##Data Flow
-###Batch Sequential
-###Pipes and Filters
+OpenRA is a Call and Return(Object Oriented)/Event system. It uses configuration files, bootstrap files for the world objets (which
+are the actors of the game). 
+Everything is prepared before the start of the game itself, so it works like:
 
-##Data-Centered
-###Repository
-###Blackboard
+* Get configurations files, send it to someone and work with the result.
+* Get bootstrap files and define what objects will be used i.e. the mods.
+* Start the game.
 
-##Virtual Machine
-###Interpreter
-###Rule-based System
-
-##Communication Processes
-
-##Event Systems
-###Implicit Invocation
-###Explicit Invocation
-
-###Call and Return
-
-####Main Program/Subroutines
-
-The AI's progress symbolizes the ideal one to how the user should conduct his own and it is founded on base setting, aquiring resources, constructing new buildings and producing combat units assumes a style in the image of batch sequential. 
-All begins with setting up a main structure, slowly at the start, you can unblock tiers of more complicated ones, each of them unblocking other options. Sometimes new features become available with combinations of aquired structures.
-Also in this line of styling, actors start simpler, and as a user get to unblock more features and structures,he also gets to access the to more sofisticated actors.
-
-###Event systems
-
-The basic in-game mechanics are founded in:
-
-####Implicit
-
-The main activity in which the user will spend time is on micro-managing the system's actors.
-Each actor has a set of abilities and features which delimits the spectrum of his usage, consequently imposing managing strategies to the user's orders.
-
-####Explicit
-
-Once embedded into the active system, the actor will have pre-setted reactions to their environment.
-This set of conditions is mutable because some of them are configurable by the user, but the actor will always be standing by to the environment interaction.
+Depending on the used mod, object actions vary acording to their specific implementation, as well as their appearance.
+Activities are ran with the help of listeners in the user interface. A typical situation in computer video games: 
+click in an object, object was clicked, object reacts accordingly.
+It also has an artificial inteligence component, typically a blackboard architecture.
