@@ -1,7 +1,1 @@
-#Analysis
-
-#Architectural Patterns
-
-#Architectural Styles
-
-#Design Patterns
+This page is not doing anything to the wiki
