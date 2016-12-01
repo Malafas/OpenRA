@@ -18,4 +18,6 @@ In the OpenRA Game Engine, the end-user can do the following:
 * Change the engine's settings;
 
 All of these user stories are illustrated in the following Use Case Diagram
+
+
 ![Use Case Diagram](https://github.com/Malafas/OpenRA/blob/bleed/ADS/4+1/Scenarios/UseCaseDiagram.png)
