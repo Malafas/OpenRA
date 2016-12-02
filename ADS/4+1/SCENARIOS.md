@@ -1,6 +1,5 @@
-#Scenarios
-
-In the OpenRA Game Engine, the end-user can do the following:
+#Scenarios/Use Case View
+The scenarios describe sequences of interactions between objects and between processes. They are used to identify architectural elements and to illustrate and validate the architecture design. They also serve as a starting point for tests of an architecture prototype. In the OpenRA Game Engine, the end-user can do the following:
 * Play missions on single player mode in the Red Alert Mod;
 * Play skirmish on single player mode in the Red Alert Mod;
 * Play skirmish on multiplayer player mode in the Red Alert Mod;
