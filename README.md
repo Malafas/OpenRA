@@ -15,3 +15,17 @@ This system's architectural analysis will be based on three main aspects:
 #[Design]()
 
 Finally, the main design aspect that will be evaluated in this project, is going to be its [**design patterns**](https://github.com/Malafas/OpenRA/blob/bleed/ADS/DESIGN.md)
+
+
+#MMORTS
+As requested we will now proceed to refer what we would do to turn this RTS game engine into an Massive Multiplayer Online RTS (MMORTS) game engine.
+
+The OpenRA Game Engine currently allows for multiplayer online engagements between parties of up to 16 players. In order to make it to become an MMO-Supported Engine it would need to enable parties of hundreds to thousands of players and for this there are three basic aspects that need to be changed before any major architectural adjustments is made:
+
+*The maps need to be much larger;
+*More diversity when it comes to team choices;
+*And a lot more customization so that players can distinguish themselves.
+
+Currently, the games online experience is conducted by two main components:
+
+* **Client Machine-** which represents
