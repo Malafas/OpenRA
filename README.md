@@ -26,6 +26,8 @@ The OpenRA Game Engine currently allows for multiplayer online engagements betwe
 *More diversity when it comes to team choices;
 *And a lot more customization so that players can distinguish themselves.
 
+
+##Current Architecture
 Currently, the games online experience is conducted by two main components:
 
 * **Game Server-** in which games and matches are running
@@ -33,8 +35,10 @@ Currently, the games online experience is conducted by two main components:
 
 This simple HTTP Request-based Service Oriented Architecture works as follows:
 * The Client Machine asks the Game Server for the state of every actor in the game;
-* The Game Server then responds to the Client Machine.
-* The previous steps repeat as long as the player is connected to that game session
-* While this happens, the user interacts with their machine which then proceeds to post that information to the Game Server
+* The Game Server then responds to the Client Machine;
+* The previous steps repeat as long as the player is connected to that game session;
+* While this happens, the user interacts with their machine which then proceeds to post that information to the Game Server.
 
+With this Architecture and today's technology, we can just have a single physical machine to host every game server since the vast majority of players are European (as seen by the curently active online servers)
 
+##MMO Architecture
