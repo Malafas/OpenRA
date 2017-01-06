@@ -28,4 +28,13 @@ The OpenRA Game Engine currently allows for multiplayer online engagements betwe
 
 Currently, the games online experience is conducted by two main components:
 
-* **Client Machine-** which represents
+* **Game Server-** in which games and matches are running
+* **Client Machine-** the representation of the game running on the game server, which the user can interact with
+
+This simple HTTP Request-based Service Oriented Architecture works as follows:
+* The Client Machine asks the Game Server for the state of every actor in the game;
+* The Game Server then responds to the Client Machine.
+* The previous steps repeat as long as the player is connected to that game session
+* While this happens, the user interacts with their machine which then proceeds to post that information to the Game Server
+
+
