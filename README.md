@@ -22,7 +22,7 @@ As requested we will now proceed to refer what we would do to turn this RTS game
 
 The OpenRA Game Engine currently allows for multiplayer online engagements between parties of up to 16 players. In order to make it to become an MMO-Supported Engine it would need to enable parties of hundreds to thousands of players and for this there are three basic aspects that need to be changed before any major architectural adjustments is made:
 
-*The maps need to be much larger;
+*The maps need to be much larger, they should become "game worlds" with separate sections with the capabilty of communicating with each other to allow the exchange of resources between players;
 *More diversity when it comes to team choices;
 *And a lot more customization so that players can distinguish themselves.
 
@@ -39,8 +39,20 @@ This simple HTTP Request-based Service Oriented Architecture works as follows:
 * The previous steps repeat as long as the player is connected to that game session;
 * While this happens, the user interacts with their machine which then proceeds to post that information to the Game Server.
 
-With this Architecture and today's technology, we can just have a single physical machine to host every game server since the vast majority of players are European (as seen by the curently active online servers)
+With this Architecture and today's technology, we can just have a single physical machine to host every game server since the vast majority of players are European (as seen by the currently active online servers)
 
 ##Scale Me Up!
 
-This type of architecture may work with 
+This type of architecture may work for a small scale online experience, but the amount of HTTP requests handled in an MMO game would quickly burn through this machine's resources in no time. Therefore we need to make big adjustments.
+
+##Persistance is Key
+First of all, every single piece of persistable data needs to be saved in separate machines not only to decrease the systems coupling but also for fault tolerance which decreases its MTBF (Mean Time Between Failure) and increase its MTTF (Mean Time To Failure).
+
+RAID
+
+##Mr.Worldwide
+Then after choosing the most fitting fault tolerance technique and the amount of physical machines needed for the Database Management System, there is a big problem that needs to be tackled: since game worlds are extremely large and have separate sections, each section should be running as a standalone server instead of having the enterity of the map in a single server.
+
+Not only that but since the game is global, we need to have active servers across the world to allow fast communications between servers and clients, and these servers must be interconnected for transcontinental data transactions
+
+This means that a game world would physically be distributed in a Server Farm, multiply that by the amount of worlds running at the same time and we have multiple sets of server farms distributed across the globe communicating not only within farms but between continents.
