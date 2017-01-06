@@ -41,4 +41,4 @@ This simple HTTP Request-based Service Oriented Architecture works as follows:
 
 With this Architecture and today's technology, we can just have a single physical machine to host every game server since the vast majority of players are European (as seen by the curently active online servers)
 
-##MMO Architecture
+##Scale Me Up!
