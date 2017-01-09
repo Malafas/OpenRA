@@ -101,7 +101,7 @@ High Speed rates. Excellent for server implementation but it's expansion is too 
 Unecessary complexity.
 **Answer:** Nope
 
-**FINAL ANSWER:** RAID 5 FTW
+**FINAL ANSWER:** RAID 50 FTW
 
 Having taken this into consideration our system's data persistency needs to assure the following:
 *All persisted data will be managed by a controller independent of the main machine: Jogo não pode parar, hot-swapping (disco falha pode ser trocado sem desligar o sistema)
