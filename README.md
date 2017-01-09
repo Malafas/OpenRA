@@ -31,15 +31,15 @@ The OpenRA Game Engine currently allows for multiplayer online engagements betwe
 Currently, the games online experience is conducted by two main components:
 
 
-![Banana](https://github.com/Malafas/OpenRA/blob/bleed/ADS/4+1/PhysicalView/OpenRA Not MMO.png)
+![](https://github.com/Malafas/OpenRA/blob/bleed/ADS/4+1/PhysicalView/OpenRA Not MMO.png)
 
 
 * **Game Server-** in which games and matches are running
 * **Client Machine-** the representation of the game running on the game server, which the user can interact with
 
 This simple HTTP Request-based Service Oriented Architecture works as follows:
-* The Client Machine asks the Game Server for the state of every actor in the game;
-* The Game Server then responds to the Client Machine;
+* The Client Machine registers in the Game Server as interested in the state of the game running on the server;
+* The Game Server sends state changes information to the Client Machine;
 * The previous steps repeat as long as the player is connected to that game session;
 * While this happens, the user interacts with their machine which then proceeds to post that information to the Game Server.
 
@@ -129,3 +129,6 @@ Then after choosing the most fitting fault tolerance technique and the amount of
 Not only that but since the game is global, we need to have active servers across the world to allow fast communications between servers and clients, and these servers must be interconnected for transcontinental data transactions
 
 This means that a game world would physically be distributed in a Server Farm, multiply that by the amount of worlds running at the same time and we have multiple sets of server farms distributed across the globe communicating not only within farms but between continents.
+
+
+![](https://github.com/Malafas/OpenRA/blob/bleed/ADS/4+1/PhysicalView/OpenRA Tryin' MMO.png)
