@@ -80,6 +80,7 @@ RAID X a.k.a. Redundant Array of Independent Disks is a data storage virtualizat
 
 **RAID 5**
 * Evolved form of RAID 4, but if a disk fails all reading and writing proccess are slowed down while the failure is getting fixed.
+
 **Answer:** May B
 
 **RAID 6**
