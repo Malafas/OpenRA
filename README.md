@@ -105,10 +105,9 @@ RAID X a.k.a. Redundant Array of Independent Disks is a data storage virtualizat
 ###FINAL ANSWER:
 **RAID 50 FTW**
 
-Having taken this into consideration our system's data persistency needs to assure the following:
-* All persisted data will be managed by a controller independent of the main machine: Jogo não pode parar, hot-swapping (disco falha pode ser trocado sem desligar o sistema)
-* Prevê cache maior performance.
-* Cache não-volátil (protegido por bateria) escritas pendentes não são perdidas se falha energia.
+Having taken this into consideration, as far as data persistency goes, our system needs to assure the following:
+* All persisted data will be managed by a controller independent of the main machine because the Game must not stop unintentionally and with hot-swapping if a disk fails, it can be swapped without turning off the system.
+* Non-volatile Cache (with a backup battery) so that pending writing processes are not lost in case of sudden power cut.
 * Performance garantida, não sobrecarrega processador
 * Podem suportar vários sistemas operativos (controlador apresenta ao sistema um disco simples).
 
