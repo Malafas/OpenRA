@@ -54,7 +54,7 @@ RAID X a.k.a. Redundant Array of Independent Disks is a data storage virtualizat
 
 "X" stands for the amount of different arrangements that can be setup in order to best fit a systems requirements.
 
-####So... Which one?
+###So... Which one?
 
 **RAID 0: Striping**
 There is no redundancy. If a single disk fails the information is lost.
@@ -100,7 +100,8 @@ High Speed rates. Excellent for server implementation but it's expansion is too 
 Unecessary complexity.
 **Answer:** Nope
 
-**FINAL ANSWER:** RAID 50 FTW
+###FINAL ANSWER:
+**RAID 50 FTW**
 
 Having taken this into consideration our system's data persistency needs to assure the following:
 * All persisted data will be managed by a controller independent of the main machine: Jogo não pode parar, hot-swapping (disco falha pode ser trocado sem desligar o sistema)
