@@ -48,7 +48,58 @@ This type of architecture may work for a small scale online experience, but the 
 ##Persistance is Key
 First of all, every single piece of persistable data needs to be saved in separate machines not only to decrease the systems coupling but also for fault tolerance which decreases its MTBF (Mean Time Between Failure) and increase its MTTF (Mean Time To Failure).
 
-RAID
+Since we are already talking about fault-tolerance let's think about how will we be able to persist data and ensure that all saved data is as fault tolerant as possible.
+
+###RAID X
+Redundant Array of Independent Disks is a data storage virtualization technology that combines multiple physical disk drive components into a single logical unit for the purposes of data redundancy, performance improvement, or both.
+
+"X" stands for the amount of different arrangements that can be setup in order to best fit a systems requirements.
+
+####So... Which one?
+
+**RAID 0: Striping** Não
+Não existe redundância. Um disco falha, perde-se a informação para sempre.
+
+**RAID 1: Mirror** Talvez
+2n número de discos. Não garante tanta segurança como RAID 5 ou 6
+
+**RAID 2: ECC (Error Correcting Code)** Não
+Usar discos especificamente para ECC é antiquado. Esta tecnologia tornou-se obsoleta pelo facto de agora os discos possuírem esta correção internamente.
+
+**RAID 3: RAID 2 Simplificado** Talvez
+Usa paridade. Erros aleatórios não detetados não são corrigidos. Para falhas de drives, garante correção total de erros.
+
+**RAID 4** Não
+Já não se usa
+
+**RAID 5** Talvez
+RAID 4 Evoluído, mas se um disco falha disponibilidade geral diminui significativamente no processo de correção
+
+**RAID 6** Talvez menos que RAID 5. RAID 5 Evoluído. Usa o dobro dos bits de paridade, portanto garante integridade dos dados na falha de até 2 discos em simultâneo.
+
+**RAID 01** Não
+Mirror com Striping por baixo. Expansão demasiado elevada em termos de monetários. Não garante tanta segurança como RAID 5 ou 6
+
+**RAID 10** Não
+Striping com Mirror por baixo. Expansão demasiado elevada em termos de monetários. Não garante tanta segurança como RAID 5 ou 6
+
+**RAID 50** - Muito Talvez
+Técnica híbrida. Stripping com paridade por baixo. Altas taxas de transferência. Muito bom para usar em servidores. No entanto expandir é bastante dispendioso
+
+**RAID 100** - Não
+Complexidade desnecessária. Dois níveis de Striping seguido de Mirror
+
+**RAID 50** FTW
+
+Having taken this into consideration our system's data persistency needs to assure the following:
+*All persisted data will be managed by a controller independent of the main machine: Jogo não pode parar, hot-swapping (disco falha pode ser trocado sem desligar o sistema)
+*Prevê cache maior performance.
+*Cache não-volátil (protegido por bateria) escritas pendentes não são perdidas se falha energia.
+*Performance garantida, não sobrecarrega processador
+*podem suportar vários sistemas operativos (controlador apresenta ao sistema um disco simples).
+
+Implementação por software apresenda a grande desvantagem de o processamento ser feito pelo CPU, assim como ser necessária uma abstração entre
+a operação lógica (RAID) e os discos físicos, a cargo do sistema operativo.
 
 ##Mr.Worldwide
 Then after choosing the most fitting fault tolerance technique and the amount of physical machines needed for the Database Management System, there is a big problem that needs to be tackled: since game worlds are extremely large and have separate sections, each section should be running as a standalone server instead of having the enterity of the map in a single server.
