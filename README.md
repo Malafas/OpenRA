@@ -50,8 +50,7 @@ First of all, every single piece of persistable data needs to be saved in separa
 
 Since we are already talking about fault-tolerance let's think about how will we be able to persist data and ensure that all saved data is as fault tolerant as possible.
 
-###RAID X
-Redundant Array of Independent Disks is a data storage virtualization technology that combines multiple physical disk drive components into a single logical unit for the purposes of data redundancy, performance improvement, or both.
+RAID X a.k.a. Redundant Array of Independent Disks is a data storage virtualization technology that combines multiple physical disk drive components into a single logical unit for the purposes of data redundancy, performance improvement, or both.
 
 "X" stands for the amount of different arrangements that can be setup in order to best fit a systems requirements.
 
