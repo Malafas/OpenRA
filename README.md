@@ -105,13 +105,16 @@ RAID X a.k.a. Redundant Array of Independent Disks is a data storage virtualizat
 ###FINAL ANSWER:
 **RAID 50 FTW**
 
-Now that we have opted for RAID 50 let's decide how will we implement it.
+Now that we have opted for RAID 50 let's decide how will it be implemented. Will the persisted data be distributed within the RAID via a micro-controller separate from the main machine (Hardware Implementation) or via a software that is installed in the main machine (Software Implementation)? Given the high coupling profile of the Software implementation we pre-empted that, for the purpose of this system, the Hardware Implementation will be a more fitting approach. But let us check the Pros and Cons of each implementation.
+
+**Hardware Implementation**
 * All persisted data will be managed by a controller independent of the main machine because the Game must not stop unintentionally and with hot-swapping if a disk fails, it can be swapped without turning off the system.
 * Non-volatile Cache (with a backup battery) so that pending writing processes are not lost in case of sudden power cut.
 * Performance garantida, não sobrecarrega processador
 * Podem suportar vários sistemas operativos (controlador apresenta ao sistema um disco simples).
 
-Implementação por software apresenda a grande desvantagem de o processamento ser feito pelo CPU, assim como ser necessária uma abstração entre
+**Implementação por software**
+apresenda a grande desvantagem de o processamento ser feito pelo CPU, assim como ser necessária uma abstração entre
 a operação lógica (RAID) e os discos físicos, a cargo do sistema operativo.
 
 ##Mr.Worldwide
