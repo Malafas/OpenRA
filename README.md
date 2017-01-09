@@ -86,36 +86,38 @@ RAID X a.k.a. Redundant Array of Independent Disks is a data storage virtualizat
 * Evolved form of RAID 5. It uses twice as many parity bits which assures data integrity with up to two simultaneous disk failures.
 **Answer:** Maybe
 
-**RAID 01: Mirror w/ Underlying Striping**
+**RAID 01: Mirror w/ Underlying Stripping**
 * Too expensive and it isn't as safe as RAID 5 and 6
 **Answer:** Nopez
 
-**RAID 10: Striping w/ Underlying Mirror**
+**RAID 10: Stripping w/ Underlying Mirror**
 * Too expensive and it isn't as safe as RAID 5 and 6
 **Answer:** Nop Again
 
-**RAID 50: Striping w/ Underlying Parity**
+**RAID 50: Stripping w/ Underlying Parity**
 * High Speed rates. Excellent for server implementation but it's expansion is too expensive.
 **Answer:** Maybee
 
-**RAID 100: Double Striping w/ Mirror**
+**RAID 100: Double Stripping w/ Mirror**
 * Unecessary complexity.
 **Answer:** Nope
 
 ###FINAL ANSWER:
 **RAID 50 FTW**
 
-Now that we have opted for RAID 50 let's decide how will it be implemented. Will the persisted data be distributed within the RAID via a micro-controller separate from the main machine (Hardware Implementation) or via a software that is installed in the main machine (Software Implementation)? Given the high coupling profile of the Software implementation we pre-empted that, for the purpose of this system, the Hardware Implementation will be a more fitting approach. But let us check the Pros and Cons of each implementation.
+Now that we have opted for RAID 50 let's decide how will it be implemented. Will the persisted data be distributed within the RAID via a controller separate from the main machine (Hardware Implementation) or via a software that is installed in the main machine (Software Implementation)? Given the high coupling profile of the Software implementation we pre-empted that, for the purpose of this system, the Hardware Implementation will be a more fitting approach. But let us check the Pros and Cons of each implementation.
+
+**Software Implementation**
+* The processing of the tasks would have to be done by the CPU of a non-specific machine.
+* It would require an abstraction level between logic (RAID) and the physical disks done by the OS.
+* Less expensive.
 
 **Hardware Implementation**
-* All persisted data will be managed by a controller independent of the main machine because the Game must not stop unintentionally and with hot-swapping if a disk fails, it can be swapped without turning off the system.
+* With hot-swapping if a disk fails, it can be swapped without turning off the system.
 * Non-volatile Cache (with a backup battery) so that pending writing processes are not lost in case of sudden power cut.
-* Performance garantida, não sobrecarrega processador
-* Podem suportar vários sistemas operativos (controlador apresenta ao sistema um disco simples).
-
-**Implementação por software**
-apresenda a grande desvantagem de o processamento ser feito pelo CPU, assim como ser necessária uma abstração entre
-a operação lógica (RAID) e os discos físicos, a cargo do sistema operativo.
+* It won't overload another machine with data processing.
+* It allows for the support of multiple operating systems because the controller will just be a simple driver.
+* More expensive.
 
 ##Mr.Worldwide
 Then after choosing the most fitting fault tolerance technique and the amount of physical machines needed for the Database Management System, there is a big problem that needs to be tackled: since game worlds are extremely large and have separate sections, each section should be running as a standalone server instead of having the enterity of the map in a single server.
