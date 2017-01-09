@@ -104,11 +104,11 @@ Unecessary complexity.
 **FINAL ANSWER:** RAID 50 FTW
 
 Having taken this into consideration our system's data persistency needs to assure the following:
-*All persisted data will be managed by a controller independent of the main machine: Jogo não pode parar, hot-swapping (disco falha pode ser trocado sem desligar o sistema)
-*Prevê cache maior performance.
-*Cache não-volátil (protegido por bateria) escritas pendentes não são perdidas se falha energia.
-*Performance garantida, não sobrecarrega processador
-*podem suportar vários sistemas operativos (controlador apresenta ao sistema um disco simples).
+* All persisted data will be managed by a controller independent of the main machine: Jogo não pode parar, hot-swapping (disco falha pode ser trocado sem desligar o sistema)
+* Prevê cache maior performance.
+* Cache não-volátil (protegido por bateria) escritas pendentes não são perdidas se falha energia.
+* Performance garantida, não sobrecarrega processador
+* Podem suportar vários sistemas operativos (controlador apresenta ao sistema um disco simples).
 
 Implementação por software apresenda a grande desvantagem de o processamento ser feito pelo CPU, assim como ser necessária uma abstração entre
 a operação lógica (RAID) e os discos físicos, a cargo do sistema operativo.
