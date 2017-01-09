@@ -57,39 +57,52 @@ Redundant Array of Independent Disks is a data storage virtualization technology
 
 ####So... Which one?
 
-**RAID 0: Striping** Não
-Não existe redundância. Um disco falha, perde-se a informação para sempre.
+**RAID 0: Striping**
+There is no redundancy. If a single disk fails the information is lost.
+**Answer:** No
 
-**RAID 1: Mirror** Talvez
-2n número de discos. Não garante tanta segurança como RAID 5 ou 6
+**RAID 1: Mirror**
+It does not assure as much safety as RAID 5 or 6.
+**Answer:** Maybe
 
-**RAID 2: ECC (Error Correcting Code)** Não
-Usar discos especificamente para ECC é antiquado. Esta tecnologia tornou-se obsoleta pelo facto de agora os discos possuírem esta correção internamente.
+**RAID 2: ECC (Error Correcting Code)**
+Using disks just for ECC is a relatively outdated technique because nowadays disks already have this internal correction.
+**Answer:** Nope
 
-**RAID 3: RAID 2 Simplificado** Talvez
-Usa paridade. Erros aleatórios não detetados não são corrigidos. Para falhas de drives, garante correção total de erros.
+**RAID 3**
+Simplified version of RAID 2. Random undetected errors are not fixed, but it assures that disks faults are fixed.
+**Answer:** Maybe
 
-**RAID 4** Não
-Já não se usa
+**RAID 4**
+Obsolete.
+**Answer:** Noperino
 
-**RAID 5** Talvez
-RAID 4 Evoluído, mas se um disco falha disponibilidade geral diminui significativamente no processo de correção
+**RAID 5**
+Evolved form of RAID 4, but if a disk fails all reading and writing proccess are slowed down while the failure is getting fixed.
+**Answer:** May B
 
-**RAID 6** Talvez menos que RAID 5. RAID 5 Evoluído. Usa o dobro dos bits de paridade, portanto garante integridade dos dados na falha de até 2 discos em simultâneo.
+**RAID 6**
+Evolved form of RAID 5. It uses twice as many parity bits which assures data integrity with up to two simultaneous disk failures.
+**Answer:** Maybe
 
-**RAID 01** Não
-Mirror com Striping por baixo. Expansão demasiado elevada em termos de monetários. Não garante tanta segurança como RAID 5 ou 6
+**RAID 01: Mirror w/ Underlying Striping**
+Too expensive and it isn't as safe as RAID 5 and 6
+**Answer:** Nopez
 
-**RAID 10** Não
-Striping com Mirror por baixo. Expansão demasiado elevada em termos de monetários. Não garante tanta segurança como RAID 5 ou 6
+**RAID 10: Striping w/ Underlying Mirror**
+Too expensive and it isn't as safe as RAID 5 and 6
+**Answer:** Nop Again
 
-**RAID 50** - Muito Talvez
-Técnica híbrida. Stripping com paridade por baixo. Altas taxas de transferência. Muito bom para usar em servidores. No entanto expandir é bastante dispendioso
+**RAID 50: Striping w/ Underlying Parity**
+High Speed rates. Excellent for server implementation but it's expansion is too expensive.
+**Answer:** Maybee
 
-**RAID 100** - Não
-Complexidade desnecessária. Dois níveis de Striping seguido de Mirror
+**RAID 100: Double Striping w/ Mirror**
+Unecessary complexity.
+**Answer:** Nope
 
-**RAID 50** FTW
+**RAID 50**
+**Answer:** ABSOLUTELY
 
 Having taken this into consideration our system's data persistency needs to assure the following:
 *All persisted data will be managed by a controller independent of the main machine: Jogo não pode parar, hot-swapping (disco falha pode ser trocado sem desligar o sistema)
