@@ -30,6 +30,10 @@ The OpenRA Game Engine currently allows for multiplayer online engagements betwe
 ##Current Architecture
 Currently, the games online experience is conducted by two main components:
 
+
+![Banana](https://github.com/Malafas/OpenRA/blob/bleed/ADS/4+1/PhysicalView/OpenRA Not MMO.png)
+
+
 * **Game Server-** in which games and matches are running
 * **Client Machine-** the representation of the game running on the game server, which the user can interact with
 
