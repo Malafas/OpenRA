@@ -87,8 +87,7 @@ RAID X a.k.a. Redundant Array of Independent Disks is a data storage virtualizat
 **Answer:** May B
 
 **RAID 6**
-* Evolved form of RAID 5. It uses twice as many parity bits which assures data integrity with up to two simultaneous disk failures.
-**Answer:** Maybe
+* Evolved form of RAID 5. It uses twice as many parity bits which assures data integrity with up to two simultaneous disk failures.**Answer:** Maybe
 
 **RAID 01: Mirror w/ Underlying Stripping**
 * Too expensive and it isn't as safe as RAID 5 and 6
@@ -123,12 +122,22 @@ Now that we have opted for RAID 50 let's decide how will it be implemented. Will
 * It allows for the support of multiple operating systems because the controller will just be a simple driver.
 * More expensive.
 
+
+//MENTION NoSQL and SQL DBs
+
 ##Mr.Worldwide
-Then after choosing the most fitting fault tolerance technique and the amount of physical machines needed for the Database Management System, there is a big problem that needs to be tackled: since game worlds are extremely large and have separate sections, each section should be running as a standalone server instead of having the enterity of the map in a single server.
+Then after choosing the most fitting fault tolerance technique and the amount of physical machines needed for the Database Management System, there is a big problem that needs to be tackled: since game worlds are extremely large and have separate sections, each section should be running as a standalone server instead of having the enterity of the map in a single server. Not only that but since the game is global, we need to have active servers across the world to allow fast communications between servers and clients, and these servers must be interconnected for transcontinental data transactions
 
-Not only that but since the game is global, we need to have active servers across the world to allow fast communications between servers and clients, and these servers must be interconnected for transcontinental data transactions
+This means that a game world would physically be distributed in a Server Farm, multiply that by the amount of game worlds running at the same time and we have multiple sets of server farms distributed across the globe communicating not only within farms but between continents.
 
-This means that a game world would physically be distributed in a Server Farm, multiply that by the amount of worlds running at the same time and we have multiple sets of server farms distributed across the globe communicating not only within farms but between continents.
+###How should we approach this?
+If we were to stick with our current architecture, we would end up having a Client side communicating with a Server side made up of several Server Farms that knew each other and could direct you in every direction if you were to ask them were the other Servers were. This would mean that every server would have to keep track of other Server's locations within the network while processing their own game servers.
 
+This, of course, is a very bad idea not only for inefficiency but for latency purposes as well.
+
+So our solution for this problem would be to add several "Game Selection" Servers which would serve as "doormen" or "router" for all the Game Servers currently running. When the player wants to change to a different game world or go to a different part of the world that is running on another server, the "Game Selection" server tells the client were that game world is located and proceeds to tell them were to communicate. After that the client connects "directly" to the game world.
+
+
+##Change doesn't have to be scary (games persist across platforms)
 
 ![](https://github.com/Malafas/OpenRA/blob/bleed/ADS/4+1/PhysicalView/OpenRA Tryin' MMO.png)
