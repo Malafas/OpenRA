@@ -5,7 +5,7 @@ In this project we will be talking about the OpenRA Game Engine, how it was desi
 #[Analysis and Overview](https://github.com/Malafas/OpenRA/blob/bleed/ADS/ANALYSIS.md)
 In order to be able to understand how this system works and what patterns and styles have been used during its development, we will first be doing a quick analysis and overview of the systems features and project structure.
 
-#[Architecture]()
+#Architecture
 
 This system's architectural analysis will be based on three main aspects:
 * It's [**architectural patterns**](https://github.com/Malafas/OpenRA/blob/bleed/ADS/ARCHITECTURE.md) (MVC, MVVM, MVP...) ;
