@@ -165,7 +165,6 @@ This, of course, is a very bad idea not only for inefficiency but for latency pu
 
 So our solution for this problem would be to add several "Game Selection" Servers which would serve as "doormen" or "router" for all the Game Servers currently running. When the player wants to change to a different game world or go to a different part of the world that is running on another server, the "Game Selection" server tells the client were that game world is located and proceeds to tell them were to communicate. After that the client connects "directly" to the game world.
 
+![](https://github.com/Malafas/OpenRA/blob/bleed/ADS/4+1/PhysicalView/OpenRA Tryin' MMO.png)
 
 ##Change Doesn't Have To Be Scary (games persist across platforms)
-
-![](https://github.com/Malafas/OpenRA/blob/bleed/ADS/4+1/PhysicalView/OpenRA Tryin' MMO.png)
