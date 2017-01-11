@@ -171,4 +171,10 @@ So our solution for this problem would be to add several "Game Selection" Server
 
 ##Change Doesn't Have To Be Scary (games persist across platforms)
 
+We now finally seem to have a structured MMORTS Game Engine, but there are a few details that need to be polished.
+
+*How can we assure that a player's custom settings will remain acessible when they use a different device?*
+
+It is understood that we have long-term data, what it is and that it will be stored in SQL databases, but there is a special type of long-term data that will also be stored: **Custom Session Long-Term Data**. This data refers to the players custom unit *skins*, camera and control settings. By storing this data in a specific database, we finally now have a relatively polished MMORTS Game Engine.
+
 ![](https://github.com/Malafas/OpenRA/blob/bleed/ADS/openra-deployment-diagram.jpg)
