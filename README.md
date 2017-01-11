@@ -57,7 +57,9 @@ RAID X a.k.a. Redundant Array of Independent Disks is a data storage virtualizat
 
 "X" stands for the amount of different arrangements that can be setup in order to best fit a systems requirements.
 
+~~~~
 ####So... Which one?
+~~~~~
 
 1. RAID 0: Striping
   * There is no redundancy.
@@ -108,6 +110,10 @@ RAID X a.k.a. Redundant Array of Independent Disks is a data storage virtualizat
 
 
 **FINAL ANSWER: RAID 50**
+
+~~~~
+####Ok So... How?
+~~~~
 
 Now that we have opted for RAID 50 let's decide how will it be implemented. Will the persisted data be distributed within the RAID via a controller separate from the main machine (Hardware Implementation) or via a software that is installed in the main machine (Software Implementation)? Given the high coupling profile of the Software implementation we pre-empted that, for the purpose of this system, the Hardware Implementation will be a more fitting approach. But let us check the Pros and Cons of each implementation.
 
