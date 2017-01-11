@@ -20,11 +20,11 @@ Finally, the main design aspect that will be evaluated in this project, is going
 #Scale Me Up!
 As requested we will now proceed to refer what we would do to turn this RTS game engine into an Massive Multiplayer Online RTS (MMORTS) game engine.
 
-The OpenRA Game Engine currently allows for multiplayer online engagements between parties of up to 16 players. In order to make it to become an MMO-Supported Engine it would need to enable parties of hundreds to thousands of players and for this there are three basic aspects that need to be changed before any major architectural adjustments is made:
+The OpenRA Game Engine currently allows for multiplayer online engagements between parties of up to 16 players. In order for it to become an MMO-Supported Engine it would need to enable parties of hundreds to thousands of players and for this there are three basic aspects that need to be changed before any major architectural adjustments is made:
 
-*The maps need to be much larger, they should become "game worlds" with separate sections with the capabilty of communicating with each other to allow the exchange of resources between players;
-*More diversity when it comes to team choices;
-*And a lot more customization so that players can distinguish themselves.
+1. The maps need to be much larger, they should become "game worlds" with separate sections with the capabilty of communicating with each other to allow the exchange of resources between players;
+2. More diversity when it comes to team choices;
+3. And a lot more customization so that players can distinguish themselves.
 
 
 ##Current Architecture
