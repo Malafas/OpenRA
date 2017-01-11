@@ -116,7 +116,7 @@ First we need to ask ourselves another question:
 
 *Will the persisted data be distributed within the RAID via a controller separate from the main machine (Hardware Implementation) or via a software that is installed in the main machine (Software Implementation)?*
 
-Given the high coupling profile of the Software implementation we pre-empted that, for the purpose of this system, the Hardware Implementation will be a more fitting approach. But let us check the Pros and Cons of each implementation.
+Given the high coupling profile of the Software implementation we pre-empted that, for the purpose of this system, the Hardware Implementation will be a more fitting approach. But let us check the Pros and Cons of each implementation first.
 
 **Software Implementation**
 * The processing of the tasks would have to be done by the CPU of a non-specific machine.
@@ -129,6 +129,8 @@ Given the high coupling profile of the Software implementation we pre-empted tha
 * It won't overload another machine with data processing.
 * It allows for the support of multiple operating systems because the controller will just be a simple driver.
 * More expensive.
+
+As we predicted, this system will greatly improve with a Hardware Implementation of the RAID 50.
 
 ## No Data Left Behind!
 //MENTION NoSQL and SQL DBs
