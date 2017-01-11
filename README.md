@@ -169,7 +169,7 @@ So our solution for this problem would be to add several "Game Selection" Server
 
 ![](https://github.com/Malafas/OpenRA/blob/bleed/ADS/4+1/PhysicalView/OpenRA Tryin' MMO.png)
 
-##Change Doesn't Have To Be Scary (games persist across platforms)
+##Change Doesn't Have To Be Scary
 
 We now finally seem to have a structured MMORTS Game Engine, but there are a few details that need to be polished.
 
@@ -177,4 +177,26 @@ We now finally seem to have a structured MMORTS Game Engine, but there are a few
 
 It is understood that we have long-term data, what it is and that it will be stored in SQL databases, but there is a special type of long-term data that will also be stored: **Custom Session Long-Term Data**. This data refers to the players custom unit *skins*, camera and control settings. By storing this data in a specific database, we finally now have a relatively polished MMORTS Game Engine.
 
+##Search and Deploy
+
+Finally!!!
+
+Our Game Engine is able to handle most of the challenges that come with the processing of an MMORTS. Let's do a Recap:
+The OpenRa system is composed by the users' devices and the structure which will be hosted upon a cloud-computing services platform (AWS).
+
+In this system, the Game Selection Server is dedicated in managing the first communication between the Client and the possible Game Servers he can access. 
+
+Once the connection is established, the Client will communicate directly to the Game Server. 
+
+Several tools, like Memcache and Redis, are used to handle small processes and items, such as players team allocations or server player limit.
+
+Having the system hosted on a service like EC2 will allow it to accommodate a server farm to the needs of its player affluence, and so permitting a scalable solution at peak times with redundancy and multiple availability zones.
+
+There will also be devices lodging NoSQL databases which will take care of the Game Server's most dynamic information, so he can manage more efficiently its' Clients interests, and also SQL databases to gather information which is used throughout the system.
+
+Another type of storage is used in a File Server (S3) to accommodate the more static data like Mods, Maps, thumbnails, skins and logos.
+
+
 ![](https://github.com/Malafas/OpenRA/blob/bleed/ADS/openra-deployment-diagram.jpg)
+
+All that we have to do now is find the best place for its deployment!
