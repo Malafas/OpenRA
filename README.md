@@ -113,7 +113,9 @@ Given all of the aspects refered previsouly we found RAID 50 to be the most fitt
 ####Ok So... How?
 
 First we need to ask ourselves another question:
+
 *Will the persisted data be distributed within the RAID via a controller separate from the main machine (Hardware Implementation) or via a software that is installed in the main machine (Software Implementation)?*
+
 Given the high coupling profile of the Software implementation we pre-empted that, for the purpose of this system, the Hardware Implementation will be a more fitting approach. But let us check the Pros and Cons of each implementation.
 
 **Software Implementation**
