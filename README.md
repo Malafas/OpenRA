@@ -133,7 +133,24 @@ Given the high coupling profile of the Software implementation we pre-empted tha
 As we predicted, this system will greatly improve with a Hardware Implementation of the RAID 50.
 
 ## No Data Left Behind!
-//MENTION NoSQL and SQL DBs
+Now that our data is significantly fault-tolerant we can decide what kind of data base systems do we want to have for our Game Engine.
+We have a substancial amount data being persisted in our data bases, but they all have different purposes. We can already imagine a series of apparently similar, but very different types of data:
+* Players' unit movements;
+* The creation of new units;
+* The destruction or theft of other player's resources and units;
+* Players' score;
+* Players' partnerships;
+* Players' number of units and resources.
+
+Some of these are relevant to the current game session (unit movements, units created, units destructed, resources spent, etc), but have no real value for the players statistical data e.g. how many units have crossed coordinates (53004, 40053) in the Dune map. And other data, like a Players score and total number of enemy units destroyed are important in Leaderboards. We can clearly see that there are two types of data here, short-term and long-term data.
+
+These two distinct types of data also have a very distinctive "flow":
+* Short-Term Data: is being created, sent and deleted extremely often;
+* Long-Term Data: is usually only sent at the end of a game session and some of it is almost never deleted.
+
+Therefore we have decided that we would have two different types of databases:
+* NoSQL: databases which would store short-term data;
+* SQL: databases which would store long-term data.
 
 ##Mr.Worldwide
 Then after choosing the most fitting fault tolerance technique and the amount of physical machines needed for the Database Management System, there is a big problem that needs to be tackled: since game worlds are extremely large and have separate sections, each section should be running as a standalone server instead of having the enterity of the map in a single server. Not only that but since the game is global, we need to have active servers across the world to allow fast communications between servers and clients, and these servers must be interconnected for transcontinental data transactions
