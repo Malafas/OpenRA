@@ -60,49 +60,49 @@ RAID X a.k.a. Redundant Array of Independent Disks is a data storage virtualizat
 ####So... Which one?
 
 1. **RAID 0: Striping**
-* There is no redundancy.
-* If a single disk fails the information is lost.
+  * There is no redundancy.
+  * If a single disk fails the information is lost.
 **Answer:** No
 
 2. **RAID 1: Mirror**
-* It does not assure as much safety as RAID 5 or 6.
+  * It does not assure as much safety as RAID 5 or 6.
 **Answer:** Maybe
 
 3. **RAID 2: ECC (Error Correcting Code)**
-* Using disks just for ECC is a relatively outdated technique because nowadays disks already have this internal correction.
+  * Using disks just for ECC is a relatively outdated technique because nowadays disks already have this internal correction.
 **Answer:** Nope
 
 4. **RAID 3**
-* Simplified version of RAID 2.
-* Random undetected errors are not fixed, but it assures that disks faults are fixed.
+  * Simplified version of RAID 2.
+  * Random undetected errors are not fixed, but it assures that disks faults are fixed.
 **Answer:** Maybe
 
 5. **RAID 4**
-* Obsolete.
+  * Obsolete.
 **Answer:** Noperino
 
 6. **RAID 5**
-* Evolved form of RAID 4, but if a disk fails all reading and writing proccess are slowed down while the failure is getting fixed.
+  * Evolved form of RAID 4, but if a disk fails all reading and writing proccess are slowed down while the failure is getting fixed.
 **Answer:** May B
 
 7. **RAID 6**
-* Evolved form of RAID 5. It uses twice as many parity bits which assures data integrity with up to two simultaneous disk failures.
+  * Evolved form of RAID 5. It uses twice as many parity bits which assures data integrity with up to two simultaneous disk failures.
 **Answer:** Maybe
 
 8. **RAID 01: Mirror w/ Underlying Stripping**
-* Too expensive and it isn't as safe as RAID 5 and 6
+  * Too expensive and it isn't as safe as RAID 5 and 6
 **Answer:** Nopez
 
 9. **RAID 10: Stripping w/ Underlying Mirror**
-* Too expensive and it isn't as safe as RAID 5 and 6
+  * Too expensive and it isn't as safe as RAID 5 and 6
 **Answer:** Nop Again
 
 10. **RAID 50: Stripping w/ Underlying Parity**
-* High Speed rates. Excellent for server implementation but it's expansion is too expensive.
+  * High Speed rates. Excellent for server implementation but it's expansion is too expensive.
 **Answer:** Maybee
 
 11. **RAID 100: Double Stripping w/ Mirror**
-* Unecessary complexity.
+  * Unecessary complexity.
 **Answer:** Nope
 
 
