@@ -132,6 +132,8 @@ Given the high coupling profile of the Software implementation we pre-empted tha
 
 As we predicted, this system will greatly improve with a Hardware Implementation of the RAID 50.
 
+![](https://github.com/Malafas/OpenRA/blob/bleed/ADS/510px-RAID_50.png)
+
 ### No Data Left Behind!
 Now that our data is significantly fault-tolerant we can decide what kind of data base systems do we want to have for our Game Engine.
 We have a substancial amount data being persisted in our data bases, but they all have different purposes. We can already imagine a series of apparently similar, but very different types of data:
@@ -168,3 +170,5 @@ So our solution for this problem would be to add several "Game Selection" Server
 ![](https://github.com/Malafas/OpenRA/blob/bleed/ADS/4+1/PhysicalView/OpenRA Tryin' MMO.png)
 
 ##Change Doesn't Have To Be Scary (games persist across platforms)
+
+![](https://github.com/Malafas/OpenRA/blob/bleed/ADS/openra-deployment-diagram.png)
