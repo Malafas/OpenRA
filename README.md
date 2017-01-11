@@ -111,7 +111,7 @@ RAID X a.k.a. Redundant Array of Independent Disks is a data storage virtualizat
 
 **FINAL ANSWER: RAID 50**
 
----
+--
 
 ####Ok So... How?
 
