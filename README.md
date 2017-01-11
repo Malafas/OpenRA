@@ -126,7 +126,7 @@ Now that we have opted for RAID 50 let's decide how will it be implemented. Will
 * It allows for the support of multiple operating systems because the controller will just be a simple driver.
 * More expensive.
 
-### No Data Left Behind!
+## No Data Left Behind!
 //MENTION NoSQL and SQL DBs
 
 ##Mr.Worldwide
