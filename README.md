@@ -171,4 +171,4 @@ So our solution for this problem would be to add several "Game Selection" Server
 
 ##Change Doesn't Have To Be Scary (games persist across platforms)
 
-![](https://github.com/Malafas/OpenRA/blob/bleed/ADS/openra-deployment-diagram.png)
+![](https://github.com/Malafas/OpenRA/blob/bleed/ADS/openra-deployment-diagram.jpg)
