@@ -108,7 +108,7 @@ RAID X a.k.a. Redundant Array of Independent Disks is a data storage virtualizat
 
 
 
-Given all of the aspects refered previsouly we found RAID 50 to be the most fitting. 
+Given all of the aspects refered previsouly we found RAID 50 to be the most fitting. So all we have to do now is implement this technology.
 
 ####Ok So... How?
 
