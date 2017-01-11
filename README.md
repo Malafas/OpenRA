@@ -182,6 +182,7 @@ It is understood that we have long-term data, what it is and that it will be sto
 Finally!!!
 
 Our Game Engine is able to handle most of the challenges that come with the processing of an MMORTS. Let's do a Recap:
+
 The OpenRa system is composed by the users' devices and the structure which will be hosted upon a cloud-computing services platform (AWS).
 
 In this system, the Game Selection Server is dedicated in managing the first communication between the Client and the possible Game Servers he can access. 
