@@ -51,15 +51,18 @@ This type of architecture may work for a small scale online experience, but the 
 First of all, every single piece of persistable data needs to be saved in separate machines not only to decrease the systems coupling but also for fault tolerance, which decreases its MTBF (Mean Time Between Failure) and increase its MTTF (Mean Time To Failure).
 
 ###Tolerate Your Faults
+
+--
+
 Since we are already talking about fault-tolerance let's think about how will we be able to persist data and ensure that all saved data is as fault tolerant as possible.
 
 RAID X a.k.a. Redundant Array of Independent Disks is a data storage virtualization technology that combines multiple physical disk drive components into a single logical unit for the purposes of data redundancy, performance improvement, or both.
 
 "X" stands for the amount of different arrangements that can be setup in order to best fit a systems requirements.
 
---
-
 ####So... Which one?
+
+--
 
 1. RAID 0: Striping
   * There is no redundancy.
@@ -111,9 +114,9 @@ RAID X a.k.a. Redundant Array of Independent Disks is a data storage virtualizat
 
 **FINAL ANSWER: RAID 50**
 
---
-
 ####Ok So... How?
+
+--
 
 Now that we have opted for RAID 50 let's decide how will it be implemented. Will the persisted data be distributed within the RAID via a controller separate from the main machine (Hardware Implementation) or via a software that is installed in the main machine (Software Implementation)? Given the high coupling profile of the Software implementation we pre-empted that, for the purpose of this system, the Hardware Implementation will be a more fitting approach. But let us check the Pros and Cons of each implementation.
 
@@ -130,6 +133,8 @@ Now that we have opted for RAID 50 let's decide how will it be implemented. Will
 * More expensive.
 
 ### No Data Left Behind!
+
+--
 //MENTION NoSQL and SQL DBs
 
 ##Mr.Worldwide
@@ -138,6 +143,9 @@ Then after choosing the most fitting fault tolerance technique and the amount of
 This means that a game world would physically be distributed in a Server Farm, multiply that by the amount of game worlds running at the same time and we have multiple sets of server farms distributed across the globe communicating not only within farms but between continents.
 
 ###How should we approach this?
+
+--
+
 If we were to stick with our current architecture, we would end up having a Client side communicating with a Server side made up of several Server Farms that knew each other and could direct you in every direction if you were to ask them were the other Servers were. This would mean that every server would have to keep track of other Server's locations within the network while processing their own game servers.
 
 This, of course, is a very bad idea not only for inefficiency but for latency purposes as well.
@@ -146,5 +154,8 @@ So our solution for this problem would be to add several "Game Selection" Server
 
 
 ##Change Doesn't Have To Be Scary (games persist across platforms)
+
+--
+
 
 ![](https://github.com/Malafas/OpenRA/blob/bleed/ADS/4+1/PhysicalView/OpenRA Tryin' MMO.png)
