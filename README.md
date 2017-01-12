@@ -40,9 +40,9 @@ As requested we will now proceed to refer what we would do to turn this RTS game
 
 The OpenRA Game Engine currently allows for multiplayer online engagements between parties of up to 16 players. In order for it to become an MMO-Supported Engine it would need to enable parties of hundreds to thousands of players and for this there are three basic aspects that need to be changed before any major architectural adjustments is made:
 
-1. The maps need to be much larger, they should become "game worlds" with separate sections with the capabilty of communicating with each other to allow the exchange of resources between players;
-2. More diversity when it comes to team choices;
-3. And a lot more customization so that players can distinguish themselves.
+1. The **maps need to be much larger**, they should become "game worlds" with separate sections with the capabilty of communicating with each other to allow the exchange of resources between players;
+2. **More diversity** when it comes to team choices;
+3. And a lot **more customization** so that players can distinguish themselves.
 
 
 ##Current Architecture
@@ -66,13 +66,13 @@ With this Architecture and today's technology, we can just have a single physica
 This type of architecture may work for a small scale online experience, but the amount of HTTP requests handled in an MMO game would quickly burn through this machine's resources in no time. Therefore we need to make big adjustments.
 
 ##Persistance Is Key
-First of all, every single piece of persistable data needs to be saved in separate machines not only to decrease the systems coupling but also for fault tolerance, which decreases its MTBF (Mean Time Between Failure) and increase its MTTF (Mean Time To Failure).
+First of all, every single piece of persistable data needs to be saved in separate machines not only to **decrease the systems coupling** but also for **fault tolerance**, which decreases its MTBF (Mean Time Between Failure) and increase its MTTF (Mean Time To Failure).
 
 ###Tolerate Your Faults
 
 Since we are already talking about fault-tolerance let's think about how will we be able to persist data and ensure that all saved data is as fault tolerant as possible.
 
-RAID X a.k.a. Redundant Array of Independent Disks is a data storage virtualization technology that combines multiple physical disk drive components into a single logical unit for the purposes of data redundancy, performance improvement, or both.
+**RAID X** a.k.a. Redundant Array of Independent Disks is a data storage virtualization technology that combines multiple physical disk drive components into a single logical unit for the purposes of data redundancy, performance improvement, or both.
 
 "X" stands for the amount of different arrangements that can be setup in order to best fit a systems requirements.
 
@@ -154,7 +154,7 @@ As we predicted, this system will greatly improve with a Hardware Implementation
 
 ### No Data Left Behind!
 Now that our data is significantly fault-tolerant we can decide what kind of data base systems do we want to have for our Game Engine.
-We have a substancial amount data being persisted in our data bases, but they all have different purposes. We can already imagine a series of apparently similar, but very different types of data:
+We have a substancial amount data being persisted in our data bases, but they all have different purposes. We can already imagine a series of apparently similar, but very **different types of data**:
 * Players' unit movements;
 * The creation of new units;
 * The destruction or theft of other player's resources and units;
@@ -165,25 +165,25 @@ We have a substancial amount data being persisted in our data bases, but they al
 Some of these are relevant to the current game session (unit movements, units created, units destructed, resources spent, etc), but have no real value for the players statistical data e.g. how many units have crossed coordinates (53004, 40053) in the Dune map. And other data, like a Players score and total number of enemy units destroyed are important in Leaderboards. We can clearly see that there are two types of data here, short-term and long-term data.
 
 These two distinct types of data also have a very distinctive "flow":
-* Short-Term Data: is being created, sent and deleted extremely often;
-* Long-Term Data: is usually only sent at the end of a game session and some of it is never deleted.
+* **Short-Term Data**: is being created, sent and deleted extremely often;
+* **Long-Term Data**: is usually only sent at the end of a game session and some of it is never deleted.
 
 Therefore we have decided that we would have two different types of databases:
-* NoSQL: databases which would store short-term data;
-* SQL: databases which would store long-term data.
+* **NoSQL**: databases which would store short-term data;
+* **SQL**: databases which would store long-term data.
 
 ##Mr.Worldwide
-Then after choosing the most fitting fault tolerance technique and the amount of physical machines needed for the Database Management System, there is a big problem that needs to be tackled: since game worlds are extremely large and have separate sections, each section should be running as a standalone server instead of having the enterity of the map in a single server. Not only that but since the game is global, we need to have active servers across the world to allow fast communications between servers and clients, and these servers must be interconnected for transcontinental data transactions
+Then after choosing the most fitting fault tolerance technique and the amount of physical machines needed for the Database Management System, there is a big problem that needs to be tackled: since game worlds are extremely large and have separate sections, **each section should be running as a standalone server** instead of having the enterity of the map in a single server. Not only that but since the game is global, we need to have **active servers across the world to allow fast communications** between servers and clients, and these servers must be interconnected for transcontinental data transactions
 
-This means that a game world would physically be distributed in a Server Farm, multiply that by the amount of game worlds running at the same time and we have multiple sets of server farms distributed across the globe communicating not only within farms but between continents.
+This means that a game world would physically be distributed in a **Server Farm**, multiply that by the amount of game worlds running at the same time and we have multiple sets of server farms distributed across the globe communicating not only within farms but between continents.
 
 ###How should we approach this?
 
-If we were to stick with our current architecture, we would end up having a Client side communicating with a Server side made up of several Server Farms that knew each other and could direct you in every direction if you were to ask them were the other Servers were. This would mean that every server would have to keep track of other Server's locations within the network while processing their own game servers.
+If we were to stick with our current architecture, we would end up having a Client side communicating with a Server side made up of several **Server Farms that knew each other and could direct you in every direction** if you were to ask them were the other Servers were. This would mean that every server would have to keep track of other Server's locations within the network while processing their own game servers.
 
 This, of course, is a very bad idea not only for inefficiency but for latency purposes as well.
 
-So our solution for this problem would be to add several "Game Selection" Servers which would serve as "doormen" or "router" for all the Game Servers currently running. When the player wants to change to a different game world or go to a different part of the world that is running on another server, the "Game Selection" server tells the client were that game world is located and proceeds to tell them were to communicate. After that the client connects "directly" to the game world.
+So our solution for this problem would be to add several **"Game Selection" Servers** which would serve as "doormen" or "router" for all the Game Servers currently running. When the player wants to change to a different game world or go to a different part of the world that is running on another server, the "Game Selection" server tells the client were that game world is located and proceeds to tell them were to communicate. After that the client connects "directly" to the game world.
 
 ![](https://github.com/Malafas/OpenRA/blob/bleed/ADS/4+1/PhysicalView/OpenRA Tryin' MMO.png)
 
